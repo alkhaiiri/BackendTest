@@ -1,0 +1,123 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Alkhairi-BackendTest",
+		"_postman_id": "ed23dff0-d390-0100-454b-1f4eeb2d2d4f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:2703/register (Create)",
+			"request": {
+				"url": "http://localhost:2703/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\":\"alkhairi\",\n\t\"accountNumber\":\"6281822146322249\",\n\t\"emailAddress\":\"aaa9@gmail.com\",\n\t\"identityNumber\":\"3184263733352249\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:2703/login",
+			"request": {
+				"url": "http://localhost:2703/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YjA0Y2JiLWU2ZmYtNDQyYS1iMWViLTEzYWU1OGJlNDgwMiIsImVtYWlsQWRkcmVzcyI6ImFhYThAZ21haWwuY29tIiwiaWF0IjoxNjI2MjMwMDQyLCJleHAiOjE2MjYyMzcyNDJ9.SBWW-3vYlvH6xlFLKizoiZAjOIxtlMAAr14yZRwf0ds",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"accountNumber\":\"6281822146322249\",\n\t\"identityNumber\":\"3184263733352249\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:2703/dashboard (Read)",
+			"request": {
+				"url": "http://localhost:2703/dashboard/aaa9@gmail.com",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjBlZjk1Y2E1ZmZiZDViOTk5ZWJkM2FiIiwiZW1haWxBZGRyZXNzIjoiYWFhOUBnbWFpbC5jb20iLCJpYXQiOjE2MjYzMTQyNDQsImV4cCI6MTYyNjMyMTQ0NH0.Usv9Hm-NlYnTOYXCWE-HgN4SHaZj_81qpSchf3YuxIk",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:2703/update (Update)",
+			"request": {
+				"url": "http://localhost:2703/update",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjBlZjk1Y2E1ZmZiZDViOTk5ZWJkM2FiIiwiZW1haWxBZGRyZXNzIjoiYWFhOUBnbWFpbC5jb20iLCJpYXQiOjE2MjYzMTQyNDQsImV4cCI6MTYyNjMyMTQ0NH0.Usv9Hm-NlYnTOYXCWE-HgN4SHaZj_81qpSchf3YuxIk",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"emailAddress\":\"aaa9@gmail.com\",\n\t\"accountNumber\":\"123456789\",\n\t\"identityNumber\":\"9876543212\"\n}"
+				},
+				"description": "For update AccountNumber and IdentityNumber"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:2703/delete",
+			"request": {
+				"url": "http://localhost:2703/delete",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjBlZjk1Y2E1ZmZiZDViOTk5ZWJkM2FiIiwiZW1haWxBZGRyZXNzIjoiYWFhOUBnbWFpbC5jb20iLCJpYXQiOjE2MjYzMTQyNDQsImV4cCI6MTYyNjMyMTQ0NH0.Usv9Hm-NlYnTOYXCWE-HgN4SHaZj_81qpSchf3YuxIk",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"emailAddress\":\"aaa9@gmail.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
