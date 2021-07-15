@@ -14,7 +14,7 @@ exports.connect = () => {
       console.log("Successfully connected to database");
     })
     .catch((error) => {
-      console.log("Database connection failed. exiting now...");
+      console.log("MongoDB Connection Failed. Exiting now...");
       console.error(error);
       process.exit(1);
     });

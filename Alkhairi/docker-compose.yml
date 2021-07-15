@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  alkhairi:
+    image: alkhairi
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 2703:2703
+    depends_on:
+      - "redis"
+      - "mongo"
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    hostname: redis
+  mongo:
+    image: mongo:latest
+    ports:
+      - 27017:27017

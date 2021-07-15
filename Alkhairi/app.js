@@ -5,6 +5,9 @@ const jwt = require("jsonwebtoken");
 const auth = require("./middleware/auth");
 const User = require("./model/user");
 const redis = require('redis');
+
+console.log("Redis Host: " + process.env.REDIS_HOST);
+console.log("Redis Port: " + process.env.REDIS_PORT);
 const client = redis.createClient({
     host: process.env.REDIS_HOST,
     port: process.env.REDIS_PORT
@@ -15,8 +18,12 @@ const app = express();
 app.use(express.json());
 module.exports = app;
 
+client.on('connect',()=>{
+    console.log("Redis Connected")
+});
+
 client.on('error', err => {
-    console.log('Error ' + err);
+    console.log('Redis Connection Error: ' + err);
 });
 
 app.post("/register", async (req, res) => {
